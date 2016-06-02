@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using TwitterApp.ViewModels;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -22,9 +23,14 @@ namespace TwitterApp
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        /// View Model
+        public Timeline Timeline { get; set; }
+
         public MainPage()
         {
             this.InitializeComponent();
+            this.Timeline = new Timeline();
+            Timeline.loadTimeline();
         }
     }
 }
